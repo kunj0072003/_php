@@ -1,0 +1,201 @@
+--------------------------------- SELECT ---------------------------------
+SELECT * FROM Customers;
+SELECT CustomerName, Address FROM Customers;
+
+
+
+SELECT * FROM Employees;
+SELECT EmployeeID, FirstName FROM Employees;
+
+
+--------------------------------- UPDATE ---------------------------------
+
+UPDATE Employees 
+update Customers set first_name='Sharma', last_name='Anil', age='34'
+WHERE customer_id=2;
+
+
+--------------------------------- DELETE ---------------------------------
+
+DELETE FROM Customers WHERE CustomerName='Ajali Gupta';
+DELETE FROM Customers;
+
+DROP TABLE Employees;
+
+
+--------------------------------- INSERT ---------------------------------
+
+INSERT INTO Orders (item, amount, customer_id)
+VALUES ('Smartphone z1', '25000', '5');
+
+
+--------------------------------- WHERE ---------------------------------
+
+SELECT * FROM Customers
+WHERE Country='India';
+
+SELECT ProductName, Unit,
+FROM Products
+WHERE Price > 50;
+
+--------------------------------- LIKE ---------------------------------
+
+SELECT * FROM Customers
+WHERE Country LIKE 'a%';
+
+
+SELECT * FROM Customers
+WHERE Country LIKE '%y';
+
+
+SELECT * FROM Customers
+WHERE Country LIKE '%m%';
+
+
+SELECT * FROM Customers
+WHERE Country LIKE 'in';
+
+
+
+
+--------------------------------- GROUP BY ---------------------------------
+
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+ORDER BY COUNT(CustomerID) ASC;
+
+
+--------------------------------- HAVING ---------------------------------
+
+SELECT COUNT(OrderDetailID), Quantity
+FROM OrderDetails
+GROUP BY Quantity
+HAVING COUNT(OrderDetailID) < 10;
+
+
+--------------------------------- LIMIT ---------------------------------
+
+
+SELECT * FROM Orders LIMIT 3;
+
+SELECT * FROM Customers
+WHERE Country='Germany'
+LIMIT 20;        
+
+
+SELECT * FROM Suppliers
+ORDER BY SupplierName ASC
+LIMIT 13;
+
+
+--------------------------------- OFFSET ---------------------------------
+
+SELECT ContactName, City
+FROM Suppliers
+ORDER BY Country
+OFFSET 1 ROWS;
+
+
+--------------------------------- OFFSET ---------------------------------
+
+SELECT NAME, LOCATION, PHONE_NUMBER 
+FROM DATABASE 
+WHERE ROLL_NO IN (
+SELECT ROLL_NO FROM STUDENT WHERE SECTION='A'
+);
+
+
+INSERT INTO Student1 
+SELECT * FROM Student2;
+
+
+DELETE FROM Student2 
+WHERE ROLL_NO IN (SELECT ROLL_NO 
+                  FROM Student1 
+                  WHERE LOCATION = 'chennai');
+
+
+
+UPDATE Student2 
+SET NAME='geeks' 
+WHERE LOCATION IN (SELECT LOCATION 
+                   FROM Student1 
+                   WHERE NAME IN ('Raju', 'Ravi'));
+
+
+
+--------------------------------- AND ---------------------------------
+
+
+SELECT * FROM Suppliers
+WHERE Country = 'USA' AND SupplierName LIKE '%re%';
+
+
+SELECT * FROM Customers
+WHERE Country = 'USA'
+AND City = 'Rio de Janeiro'
+AND CustomerID < 50;
+
+
+SELECT * FROM Customers
+WHERE Country = 'London' AND (CustomerName LIKE '%n%' OR CustomerName LIKE 'R%');
+
+
+--------------------------------- OR ---------------------------------
+
+SELECT * FROM Suppliers
+WHERE Country = 'UK' OR Country = 'Italy';
+
+
+SELECT * FROM Customers
+WHERE City = 'Berlin' OR CustomerName LIKE 'G%' OR Country = 'Norway';
+
+
+SELECT * FROM Customers
+WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
+
+
+SELECT * FROM Customers
+WHERE Country = 'Spain' AND CustomerName LIKE 'G%' OR CustomerName LIKE 'R%';
+
+
+
+--------------------------------- OR ---------------------------------
+
+SELECT * FROM Customers
+WHERE NOT Country = 'USA';
+
+
+SELECT CustomerName, Country
+FROM Customers
+WHERE City NOT in ('London','México D.F.');
+
+
+SELECT * FROM Products
+WHERE Price NOT BETWEEN 2 and 15;
+
+
+
+SELECT * FROM Products
+WHERE NOT Price < 50;
+
+
+--------------------------------- IN ---------------------------------
+
+
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+
+
+SELECT * FROM Customers
+WHERE CustomerID NOT IN (SELECT CustomerID FROM Orders);
+
+
+SELECT * FROM Customers
+WHERE Country NOT IN ('Germany', 'France', 'UK');
+
+
+SELECT * FROM Customers
+WHERE CustomerID IN (SELECT CustomerID FROM Orders);
