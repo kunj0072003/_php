@@ -1,0 +1,61 @@
+	
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link rel="stylesheet" href="7. Image Gallery with Lightbox Effect.css">
+   <title>Responsive Gallery - CSS Grid & Flexbox</title>
+  
+</head>
+
+<body>
+  <h1 style="color:white;">My Awesome Image Gallery</h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="image/laptop_vintagegen10.jpg" alt="Description of Image 1" data-src="image/laptop_vintagegen10.jpg">
+        </div>
+        <div class="gallery-item">
+            <img src="image/laptop_gen4.jpg" alt="Description of Image 2" data-src="image/laptop_gen4.jpg">
+        </div>
+		
+        <div class="gallery-item">
+            <img src="image/laptop_gen2.png" alt="Description of Image 3" data-src="image/laptop_gen2.png">
+        </div>
+		
+        <div class="gallery-item">
+            <img src="image/camera_gen5.jpg" alt="Description of Image 4" data-src="image/camera_gen5.jpg">
+        </div>
+		
+        <div class="gallery-item">
+            <img src="image/smartwatch.jpg" alt="Description of Image 5" data-src="image/smartwatch.jpg">
+        </div>
+		
+		<div class="gallery-item">
+            <img src="image/smartphone.png" alt="Description of Image 5" data-src="image/smartphone.png">
+        </div>
+		
+		<div class="gallery-item">
+            <img src="image/laptop_gen8.jpg" alt="Description of Image 5" data-src="image/laptop_gen8.jpg">
+        </div>
+		
+			<div class="gallery-item">
+            <img src="image/camera_gen2.jpg" alt="Description of Image 5" data-src="image/camera_gen2.jpg">
+        </div>
+		
+        </div>
+
+    <div class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightboxImage" src="" alt="">
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
