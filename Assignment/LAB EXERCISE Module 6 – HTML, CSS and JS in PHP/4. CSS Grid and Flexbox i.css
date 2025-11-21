@@ -1,0 +1,96 @@
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: gray;
+    }
+
+
+    .header {
+      padding: 60px;
+      text-align: center;
+      background: gray;
+      color: white;
+    }
+
+
+    .navbar {
+      display: flex;
+      background-color: orange;
+    }
+
+
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+
+    .navbar a:hover {
+      background-color: red;
+      color: black;
+    }
+
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px; 
+    }
+
+
+    .side {
+      flex: 30%;
+      background-color: white;
+      padding: 20px;
+      margin: 10px; 
+      border-radius: 8px; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    }
+
+  
+    .main {
+      flex: 70%;
+      background-color: white;
+      padding: 20px;
+      margin: 10px; 
+      border-radius: 8px; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    }
+
+    
+    .img-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    
+    .img-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px; /* Space above footer */
+    }
+
+    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 700px) {
+      .row, .navbar {
+        flex-direction: column;
+      }
+    }
+  </style>
